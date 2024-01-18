@@ -1,12 +1,13 @@
 package patterns.structural.wrappers.proxy.task.downloaders.view;
 
+import patterns.structural.wrappers.proxy.solution.Downloader;
 import patterns.structural.wrappers.proxy.task.downloaders.impl.PictureDownloadService;
 
 import java.util.Scanner;
 
 public class View {
 
-    public void run(PictureDownloadService service) {
+    public void run(Downloader service) {
 
         while (true) {
             String url = prompt("Enter the url of picture's download:");

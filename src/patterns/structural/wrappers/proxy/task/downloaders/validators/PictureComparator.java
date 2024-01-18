@@ -13,6 +13,7 @@ public class PictureComparator {
     private final String DIR = "src/patterns/structural/wrappers/proxy/pictures";
 
     public boolean arePictureEqual(String path)  {
+
         try {
 
             InputStream in = new URI(path).toURL().openStream();
@@ -20,9 +21,11 @@ public class PictureComparator {
 
             File dir = new File(DIR);
             File[] files = dir.listFiles();
+            System.out.println(Arrays.toString(files));
             if (Objects.requireNonNull(files).length == 0) return false;
 
             for (File elem: Objects.requireNonNull(files)) {
+
                 byte[] current = Files.readAllBytes(Paths.get(elem.getAbsolutePath()));
                 if (isEqual(current, bytes)) return true;
             }
